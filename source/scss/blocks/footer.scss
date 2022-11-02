@@ -1,0 +1,28 @@
+.footer {
+  margin-bottom: 0;
+  margin-top: auto;
+  padding: 18px 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 2px solid rgba($red, 0.3);
+}
+
+.footer__left-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer__link {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  font-size: 18px;
+  line-height: 21px;
+  color: $red;
+  text-decoration: none;
+}

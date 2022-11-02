@@ -1,15 +1,27 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  color: rgba($white, 0.5);
+
+  background: $black;
+}
+
+main {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  color: inherit;
 }
 
 .visually-hidden {

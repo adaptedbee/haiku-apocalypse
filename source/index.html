@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Хокку Апокалипсис</title>
+    <title>Hokkuist</title>
     <!-- <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon16.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple-favicon.png">
@@ -13,7 +13,51 @@
     <link rel="preload" href="fonts/oswaldregular.woff2" type="font/woff" as="font" crossorigin="anonymous"> -->
   </head>
   <body>
-    <p>Hello world</p>
+    <header class="header">
+      <a class="header__logo">
+        <span class="visually-hidden">Hokkuist</span>
+      </a>
+
+      <button class="header__toggle-button">
+        <span class="visually-hidden">Воспроизведение/пауза</span>
+      </button>
+    </header>
+
+    <main>
+      <div class="poem js-poem">
+        <p class="poem__line">
+          <span>На мёртвой</span> <span>ветке</span>
+        </p>
+        <p class="poem__line">
+          <span>чернеет</span> <span>ворон</span>
+        </p>
+        <p class="poem__line">
+          <span>осенний</span> <span>вечер</span>
+        </p>
+      </div>
+      <div class="share">
+        <p class="share__text">share:</p>
+        <a class="share__link" href="#">inst</a>
+        <a class="share__link" href="#">twitter</a>
+        <a class="share__link" href="#">tg</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__left-wrapper">
+        <a class="footer__link">about</a>
+        <a class="footer__link" href="#">
+          <span class="visually-hidden">Instagram</span>
+        </a>
+        <a class="footer__link" href="#">
+          <span class="visually-hidden">Telegram</span>
+        </a>
+      </div>
+
+      <a class="footer__link" href="mailto:hokkuist@gmail.com">
+        hokkuist@gmail.com
+      </a>
+    </footer>
 
     <!-- <script src="./js/script.js"></script> -->
   </body>

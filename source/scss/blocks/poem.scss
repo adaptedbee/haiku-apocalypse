@@ -1,0 +1,18 @@
+.poem {
+  margin-bottom: 70px;
+}
+
+.poem__line {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 80px;
+  line-height: 93px;
+  text-align: center;
+  text-transform: lowercase;
+  color: $red;
+
+  span {
+    text-decoration-line: underline;
+  }
+}

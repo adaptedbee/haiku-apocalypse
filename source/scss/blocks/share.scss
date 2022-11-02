@@ -1,0 +1,17 @@
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 26px; 
+}
+
+.share__link {
+  &:not(:last-child) {
+    margin-right: 26px;
+  }
+}
