@@ -1,0 +1,33 @@
+.poem {
+  margin-bottom: 70px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 33px;
+  }
+}
+
+.poem__line {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 80px;
+  line-height: 93px;
+  text-align: center;
+  text-transform: lowercase;
+  color: $red;
+
+  span {
+    text-decoration-line: underline;
+    cursor: pointer;
+    transition: opacity 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

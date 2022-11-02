@@ -1,6 +1,10 @@
 @import "./global/normalize.scss";
-// @import "./global/fonts.scss";
-@import "./global/general.scss";
+@import "./global/fonts.scss";
 @import "./global/variables.scss";
+@import "./global/general.scss";
 
-// @import "./blocks/main-header.scss";
+@import "./blocks/header.scss";
+@import "./blocks/poem.scss";
+@import "./blocks/share.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/about-popup.scss";

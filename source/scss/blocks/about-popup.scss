@@ -1,0 +1,133 @@
+.about-popup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  width: calc(100% - 64px);
+  height: calc(100% - 60px);
+
+  background-color: $blue;
+
+  &.active {
+    display: flex;
+  }
+
+  @media (max-width: 767px) {
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+  }
+}
+
+.about-popup__close {
+  position: absolute;
+  top: 26px;
+  right: 30px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    top: 20px;
+    right: 20px;
+
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.about-popup__content {
+  width: 746px;
+  margin: auto;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+.about-popup__text {
+  margin-top: 0;
+  margin-bottom: 90px;
+
+  font-size: 42px;
+  line-height: 49px;
+  text-align: center;
+  text-transform: lowercase;
+  color: $black;
+
+  @media (max-width: 767px) {
+    margin-bottom: 60px;
+
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.about-popup__line {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 42px;
+  line-height: 49px;
+  text-align: center;
+  text-transform: lowercase;
+  color: $black;
+
+  span {
+    text-decoration-line: underline;
+    cursor: pointer;
+    transition: opacity 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &:last-child {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background: rgba($white, 0.16);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+    line-height: 28px;
+
+    span {
+      &:last-child {
+        &::after {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

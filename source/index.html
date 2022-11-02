@@ -3,18 +3,76 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Хокку Апокалипсис</title>
+    <title>Hokkuist</title>
     <!-- <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon16.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple-favicon.png">
     <link rel="manifest" href="manifest.webmanifest"> -->
     <link rel="stylesheet" href="css/style.min.css">
-    <!-- <link rel="preload" href="fonts/oswaldmedium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/oswaldregular.woff2" type="font/woff" as="font" crossorigin="anonymous"> -->
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
-    <p>Hello world</p>
+    <header class="header">
+      <a class="header__logo">
+        <img src="./img/logo.svg" width="168" height="30" alt="Hokkuist" />
+      </a>
 
-    <!-- <script src="./js/script.js"></script> -->
+      <button class="header__toggle-button">
+        <span class="visually-hidden">Воспроизведение/пауза</span>
+      </button>
+    </header>
+
+    <main>
+      <div class="poem js-poem">
+        <!-- <p class="poem__line">
+          <span>На мёртвой</span> <span>ветке</span>
+        </p>
+        <p class="poem__line">
+          <span>чернеет</span> <span>ворон</span>
+        </p>
+        <p class="poem__line">
+          <span>осенний</span> <span>вечер</span>
+        </p> -->
+      </div>
+      <div class="share">
+        <p class="share__text">share:</p>
+        <a class="share__link" href="#">inst</a>
+        <a class="share__link" href="#">twitter</a>
+        <a class="share__link" href="#">tg</a>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__left-wrapper">
+        <a class="footer__link js-open-about-popup">about</a>
+        <a class="footer__icon-link" href="#">
+          <img src="./img/icons/instagram.svg" width="24" height="24" alt="Instagram" />
+        </a>
+        <a class="footer__icon-link" href="#">
+          <img src="./img/icons/telegram.svg" width="24" height="24" alt="Telegram" />
+        </a>
+      </div>
+
+      <a class="footer__link" href="mailto:hokkuist@gmail.com">
+        hokkuist@gmail.com
+      </a>
+    </footer>
+
+    <div class="about-popup js-about-popup">
+      <button class="about-popup__close js-close-about-popup">
+        <img src="./img/icons/close.svg" width="42" height="42" alt="Закрыть" />
+      </button>
+
+      <div class="about-popup__content">
+        <p class="about-popup__text">
+          Excuse me, of course, but the office is independent and the price list is available. In the warmth - all the same knives: we walk around and around and retreat to the latrines. On the contrary, in cold weather we
+        </p>
+        <p class="about-popup__line">
+          <span>every</span> <span>word</span> <span>changes</span>
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
