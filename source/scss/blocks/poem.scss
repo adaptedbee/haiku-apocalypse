@@ -15,5 +15,10 @@
   span {
     text-decoration-line: underline;
     cursor: pointer;
+    transition: opacity 0.3s ease-out;
+
+    &:hover {
+      opacity: 0.4;
+    }
   }
 }
