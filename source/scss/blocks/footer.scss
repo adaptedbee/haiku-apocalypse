@@ -23,8 +23,10 @@
 
   font-size: 18px;
   line-height: 21px;
-  color: $red;
   text-decoration: none;
+  color: $red;
+
+  cursor: pointer;
 }
 
 .footer__icon-link {

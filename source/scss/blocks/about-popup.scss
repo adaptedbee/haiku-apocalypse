@@ -11,7 +11,7 @@
 
   background-color: $blue;
 
-  &--active {
+  &.active {
     display: flex;
   }
 }
