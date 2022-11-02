@@ -7,11 +7,27 @@
 .share__text {
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 26px; 
+  margin-right: 26px;
+
+  @media (max-width: 767px) {
+    margin-right: 10px;
+
+    font-size: 11px;
+    line-height: 13px;
+  }
 }
 
 .share__link {
   &:not(:last-child) {
     margin-right: 26px;
+  }
+
+  @media (max-width: 767px) {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    font-size: 11px;
+    line-height: 13px;
   }
 }

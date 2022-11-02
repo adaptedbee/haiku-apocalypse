@@ -14,6 +14,11 @@
   &.active {
     display: flex;
   }
+
+  @media (max-width: 767px) {
+    width: calc(100% - 20px);
+    height: calc(100% - 40px);
+  }
 }
 
 .about-popup__close {
@@ -31,11 +36,30 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 767px) {
+    top: 20px;
+    right: 20px;
+
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .about-popup__content {
   width: 746px;
   margin: auto;
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .about-popup__text {
@@ -47,6 +71,13 @@
   text-align: center;
   text-transform: lowercase;
   color: $black;
+
+  @media (max-width: 767px) {
+    margin-bottom: 60px;
+
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 .about-popup__line {
@@ -82,6 +113,20 @@
         height: 88px;
         border-radius: 50%;
         background: rgba($white, 0.16);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+    line-height: 28px;
+
+    span {
+      &:last-child {
+        &::after {
+          width: 50px;
+          height: 50px;
+        }
       }
     }
   }
