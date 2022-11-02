@@ -26,3 +26,11 @@
   color: $red;
   text-decoration: none;
 }
+
+.footer__icon-link {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  line-height: 0;
+}

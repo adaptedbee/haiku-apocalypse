@@ -13,5 +13,15 @@
 }
 
 .header__toggle-button {
+  width: 50px;
+  height: 50px;
 
+  background-color: $red;
+  background-image: url('../img/icons/play.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--pause {
+    background-image: url('../img/icons/pause.svg');
+  }
 }
