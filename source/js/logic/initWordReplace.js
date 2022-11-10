@@ -1,5 +1,7 @@
 import { SUBSTITUTIONS } from "../data/substitutions.js";
 import { getRandomInteger } from "../utils/getRandomInteger.js";
+import { isCapitalized } from "../utils/isCapitalized.js";
+import { capitalizeWord } from "../utils/capitalizeWord.js";
 
 export const initWordReplace = () => {
   const poem = document.querySelector('.js-poem');
@@ -9,9 +11,15 @@ export const initWordReplace = () => {
     if (!wordWrapper) {
       return;
     }
+
+    let isLowercased = false;
     const REGEX = /[^а-яё\-]/g;
-    const word = wordWrapper.innerText.toLowerCase().replace(REGEX, '');
-    console.log(word);
+    let word = wordWrapper.innerText;
+    if (isCapitalized(word)) {
+      word = word.toLowerCase();
+      isLowercased = true;
+    }
+    word = word.replace(REGEX, '');
 
     const substitutions = SUBSTITUTIONS.find(array => array.includes(word));
     if (!substitutions) {
@@ -20,12 +28,13 @@ export const initWordReplace = () => {
     const wordIndex = substitutions.indexOf(word);
     let cleanSubstitutions = [...substitutions];
     cleanSubstitutions.splice(wordIndex, 1);
-    console.log(cleanSubstitutions);
     const randomIndex = getRandomInteger(0, cleanSubstitutions.length - 1);
     const randomWord = cleanSubstitutions[randomIndex];
-    console.log(randomIndex, randomWord);
 
-    const newWord = wordWrapper.innerText.toLowerCase().replace(word, randomWord);
+    let newWord = wordWrapper.innerText.toLowerCase().replace(word, randomWord);
+    if (isLowercased) {
+      newWord = capitalizeWord(newWord);
+    }
     wordWrapper.innerText = newWord;
   });
 };
