@@ -25,7 +25,7 @@
     "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
     "build": "gulp build",
     "start": "npx gulp",
-    "deploy": "cd build && surge --domain haiku-apocalypse.surge.sh"
+    "deploy": "gulp build && cd build && surge --domain haiku-apocalypse.surge.sh"
   },
   "browserslist": [
     "last 2 versions",
