@@ -7,15 +7,16 @@ const getTodayImage = () => {
 };
 
 export const fillInitialImage = () => {
-  const imageSrc = getTodayImage();
+  const windowW = window.innerWidth;
+  const windowH = window.innerHeight;
+  let img;
 
-  const canvas = document.querySelector('.js-canvas');
-  const ctx = canvas.getContext('2d');
-  const image = document.createElement('img');
-  image.width = "1024";
-  image.height = "768";
-  image.addEventListener('load', () => {
-    ctx.drawImage(image, 0, 0, 1024, 768);
-  });
-  image.src = imageSrc;
+  window.setup = () => {
+    createCanvas(windowW, windowH);
+    img = loadImage(getTodayImage());
+  }
+
+  window.draw = () => {
+    image(img, 0, 0);
+  }
 };
