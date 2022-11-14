@@ -1,4 +1,10 @@
-import { getTodayPoem } from "./getTodayPoem.js";
+import { HAIKUS } from "../data/haikus.js";
+
+const getTodayPoem = () => {
+  const date = new Date();
+  const index = date.getDate() % HAIKUS.length;
+  return HAIKUS[index];
+};
 
 export const fillInitialPoem = () => {
   const todayPoem = getTodayPoem();

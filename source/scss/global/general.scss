@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
@@ -39,4 +40,14 @@ a {
   border: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100vh;
 }
