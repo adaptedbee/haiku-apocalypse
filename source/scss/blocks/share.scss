@@ -7,7 +7,9 @@
 .share__text {
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 26px;
+  margin-right: 21px;
+
+  text-transform: uppercase;
 
   @media (max-width: 767px) {
     margin-right: 10px;
@@ -19,8 +21,10 @@
 
 .share__link {
   &:not(:last-child) {
-    margin-right: 26px;
+    margin-right: 21px;
   }
+
+  text-transform: uppercase;
 
   @media (max-width: 767px) {
     &:not(:last-child) {

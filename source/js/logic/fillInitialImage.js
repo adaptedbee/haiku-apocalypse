@@ -7,25 +7,25 @@ const getTodayImage = () => {
 };
 
 export const fillInitialImage = () => {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  const canvasWidth = window.innerWidth < 768 ? 176 : 300;
+  const canvasHeight = window.innerWidth < 768 ? 125 : 212;
   let img;
 
   window.setup = () => {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(canvasWidth, canvasHeight);
     img = loadImage(getTodayImage());
   }
 
   window.draw = () => {
     // отображаем картинку пропорционально экрану
-    const coefW = windowWidth / img.width;
-    const heightShift = img.height * coefW - windowHeight;
+    const coefW = canvasWidth / img.width;
+    const heightShift = img.height * coefW - canvasHeight;
     if (heightShift >= 0) {
-      image(img, 0, -heightShift/2, windowWidth, img.height * coefW);
+      image(img, 0, -heightShift/2, canvasWidth, img.height * coefW);
     } else {
-      const coefH = windowHeight / img.height;
-      const widthShift = img.width * coefH - windowWidth;
-      image(img, -widthShift/2, 0, img.width * coefH, windowHeight);
+      const coefH = canvasHeight / img.height;
+      const widthShift = img.width * coefH - canvasWidth;
+      image(img, -widthShift/2, 0, img.width * coefH, canvasHeight);
     }
   }
 };

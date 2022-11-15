@@ -23,7 +23,7 @@ body {
 }
 
 main {
-  margin-top: auto;
+  margin-top: 0;
   margin-bottom: auto;
 }
 
@@ -44,10 +44,12 @@ a {
 
 canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 73px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: -1;
 
-  width: 100vw;
-  height: 100vh;
+  @media (max-width: 767px) {
+    top: 140px;
+  }
 }
