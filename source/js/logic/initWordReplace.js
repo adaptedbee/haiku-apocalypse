@@ -13,25 +13,29 @@ export const initWordReplace = () => {
     }
 
     let isLowercased = false;
-    const REGEX = /[^а-яё\-]/g;
-    let word = wordWrapper.innerText;
-    if (isCapitalized(word)) {
-      word = word.toLowerCase();
+    const REGEX = /[^а-яёА-ЯЁ\-]/g;
+    let clickedWord = wordWrapper.innerText;
+    const fullLine = wordWrapper.parentNode.textContent;
+    const wordInLineIndex = fullLine.indexOf(clickedWord);
+    clickedWord = clickedWord.replace(REGEX, '');
+    let searchWord = clickedWord;
+    // Если это первое слово в строке, то меняем его на слово с заглавной буквы
+    if (isCapitalized(clickedWord) && wordInLineIndex === 0) {
+      searchWord = clickedWord.toLowerCase();
       isLowercased = true;
     }
-    word = word.replace(REGEX, '');
 
-    const substitutions = SUBSTITUTIONS.find(array => array.includes(word));
+    const substitutions = SUBSTITUTIONS.find(array => array.includes(searchWord));
     if (!substitutions) {
       return;
     }
-    const wordIndex = substitutions.indexOf(word);
+    const wordIndex = substitutions.indexOf(searchWord);
     let cleanSubstitutions = [...substitutions];
     cleanSubstitutions.splice(wordIndex, 1);
     const randomIndex = getRandomInteger(0, cleanSubstitutions.length - 1);
     const randomWord = cleanSubstitutions[randomIndex];
 
-    let newWord = wordWrapper.innerText.toLowerCase().replace(word, randomWord);
+    let newWord = wordWrapper.innerText.replace(clickedWord, randomWord);
     if (isLowercased) {
       newWord = capitalizeWord(newWord);
     }
