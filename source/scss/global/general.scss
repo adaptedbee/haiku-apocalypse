@@ -1,3 +1,10 @@
+html {
+  @media (max-width: 767px) {
+    height: fill-available;
+    height: -webkit-fill-available;
+  }
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -17,6 +24,11 @@ body {
 
   @media (min-width: 1024px) {
     min-height: 768px;
+  }
+  @media (max-width: 1023px) {
+    min-height: 100vh;
+    min-height: fill-available;
+    min-height: -webkit-fill-available;
   }
 }
 
