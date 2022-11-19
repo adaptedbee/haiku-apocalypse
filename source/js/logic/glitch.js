@@ -104,7 +104,7 @@ export class Glitch {
     rangeH = srcImg.height;
     rangeMin = floor(random(0, rangeH));
     rangeMax = rangeMin + floor(random(1, rangeH - rangeMin));
-    offsetX = this.channelLen * floor(random(-40, 40));
+    offsetX = this.channelLen * floor(random(-100, 100));
 
     for (let y = 0; y < srcImg.height; y++) {
       if (y > rangeMin && y < rangeMax) {
@@ -136,7 +136,7 @@ export class Glitch {
     let destPixels;
     let range;
 
-    range = 16;
+    range = 100;
     destPixels = new Uint8ClampedArray(srcImg.pixels);
     randR = (floor(random(-range, range)) * srcImg.width + floor(random(-range, range))) * this.channelLen;
     randG = (floor(random(-range, range)) * srcImg.width + floor(random(-range, range))) * this.channelLen;
@@ -172,10 +172,10 @@ export class Glitch {
     let rectW;
     let rectH;
     let destImg;
-    startX = floor(random(0, srcImg.width - 30));
-    startY = floor(random(0, srcImg.height - 50));
-    rectW = floor(random(30, srcImg.width - startX));
-    rectH = floor(random(1, 50));
+    startX = floor(random(0, srcImg.width - 60));
+    startY = floor(random(0, srcImg.height - 100));
+    rectW = floor(random(60, srcImg.width - startX));
+    rectH = floor(random(1, 100));
     destImg = srcImg.get(startX, startY, rectW, rectH);
     destImg.loadPixels();
     return destImg;
@@ -186,20 +186,20 @@ export class Glitch {
     this.replaceData(this.imgOrigin, this.copyData);
 
     // sometimes pass without effect processing
-    let n = floor(random(100));
-    if (n > 75 && this.throughFlag) {
-      this.throughFlag = false;
-      setTimeout(() => {
-        this.throughFlag = true;
-      }, floor(random(40, 400)));
-    }
-    if (!this.throughFlag) {
-      push();
-      translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
-      this.coverImage(this.imgOrigin);
-      pop();
-      return;
-    }
+    // let n = floor(random(100));
+    // if (n > 75 && this.throughFlag) {
+    //   this.throughFlag = false;
+    //   setTimeout(() => {
+    //     this.throughFlag = true;
+    //   }, floor(random(40, 400)));
+    // }
+    // if (!this.throughFlag) {
+    //   push();
+    //   translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
+    //   this.coverImage(this.imgOrigin);
+    //   pop();
+    //   return;
+    // }
 
     // flow line
     this.flowLineImgs.forEach((v, i, arr) => {
@@ -223,7 +223,7 @@ export class Glitch {
 
     // shift rgb
     this.shiftRGBs.forEach((v, i, arr) => {
-      if (floor(random(100)) > 65) {
+      if (floor(random(100)) > 50) {
         arr[i] = this.shiftRGB(this.imgOrigin);
         this.replaceData(this.imgOrigin, arr[i]);
       }
@@ -238,7 +238,7 @@ export class Glitch {
     this.scatImgs.forEach((obj) => {
       push();
       translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
-      if (floor(random(100)) > 80) {
+      if (floor(random(100)) > 50) {
         obj.x = floor(random(-this.imgOrigin.width * 0.3, this.imgOrigin.width * 0.7));
         obj.y = floor(random(-this.imgOrigin.height * 0.1, this.imgOrigin.height));
         obj.img = this.getRandomRectImg(this.imgOrigin);
