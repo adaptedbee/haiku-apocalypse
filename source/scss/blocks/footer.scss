@@ -30,8 +30,9 @@
   text-decoration: none;
   color: $red;
 
-  cursor: pointer;
-
+  @media (min-width: 1024px) {
+    cursor: pointer;
+  }
   @media (max-width: 767px) {
     &:not(:last-child) {
       margin-right: 8px;
