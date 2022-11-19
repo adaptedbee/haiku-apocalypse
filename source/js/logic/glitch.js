@@ -1,5 +1,5 @@
 export class Glitch {
-  constructor(img) {
+  constructor(img, canvasWidth, canvasHeight) {
     this.channelLen = 4;
     this.imgOrigin = img;
     this.imgOrigin.loadPixels();
@@ -10,6 +10,8 @@ export class Glitch {
     this.scatImgs = [];
     this.throughFlag = true;
     this.copyData = new Uint8ClampedArray(this.imgOrigin.pixels);
+    this.canvasWidth = canvasWidth;
+    this.canvasHeight = canvasHeight;
 
     // flow line
     for (let i = 0; i < 1; i++) {
@@ -183,7 +185,6 @@ export class Glitch {
   }
 
   show() {
-
     // restore the original state
     this.replaceData(this.imgOrigin, this.copyData);
 
@@ -198,7 +199,7 @@ export class Glitch {
     if (!this.throughFlag) {
       push();
       translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
-      image(this.imgOrigin, 0, 0);
+      this.coverImage(this.imgOrigin);
       pop();
       return;
     }
@@ -233,7 +234,7 @@ export class Glitch {
 
     push();
     translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
-    image(this.imgOrigin, 0, 0);
+    this.coverImage(this.imgOrigin);
     pop();
 
     // scat image
@@ -250,6 +251,9 @@ export class Glitch {
       }
       pop();
     })
+  }
 
+  coverImage(img) {
+    image(img, 0, 0, this.canvasWidth, this.canvasHeight, 0, 0, img.width, img.height, COVER);
   }
 }

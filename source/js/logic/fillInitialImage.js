@@ -14,25 +14,19 @@ export const fillInitialImage = () => {
   let glitch;
 
   window.setup = () => {
+    background(0);
     createCanvas(canvasWidth, canvasHeight);
     img = loadImage(getTodayImage(), () => {
-      glitch = new Glitch(img);
+      glitch = new Glitch(img, canvasWidth, canvasHeight);
     });
   }
 
   window.draw = () => {
     clear();
+    background(0);
 
     // отображаем картинку пропорционально экрану
-    // const coefW = canvasWidth / img.width;
-    // const heightShift = img.height * coefW - canvasHeight;
-    // if (heightShift >= 0) {
-    //   image(img, 0, -heightShift/2, canvasWidth, img.height * coefW);
-    // } else {
-    //   const coefH = canvasHeight / img.height;
-    //   const widthShift = img.width * coefH - canvasWidth;
-    //   image(img, -widthShift/2, 0, img.width * coefH, canvasHeight);
-    // }
+    image(img, 0, 0, canvasWidth, canvasHeight, 0, 0, img.width, img.height, COVER);
 
     if (!!glitch) {
       glitch.show();
