@@ -6,7 +6,11 @@ import { isFirefox } from "./utils/isFirefox.js";
 
 fillInitialPoem();
 fillInitialImage();
-initWordReplace();
+initWordReplace(() => {
+  if (!!window.glitch) {
+    window.glitch.update();
+  }
+});
 initAboutPopup();
 
 // Фикс для высоты в мобильном Firefox

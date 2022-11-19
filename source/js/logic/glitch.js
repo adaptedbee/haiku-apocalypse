@@ -67,7 +67,6 @@ export class Glitch {
   }
 
   flowLine(srcImg, obj) {
-
     let destPixels,
       tempY;
     destPixels = new Uint8ClampedArray(srcImg.pixels);
@@ -96,7 +95,6 @@ export class Glitch {
   }
 
   shiftLine(srcImg) {
-
     let offsetX;
     let rangeMin, rangeMax;
     let destPixels;
@@ -134,7 +132,6 @@ export class Glitch {
   }
 
   shiftRGB(srcImg) {
-
     let randR, randG, randB;
     let destPixels;
     let range;
@@ -184,7 +181,7 @@ export class Glitch {
     return destImg;
   }
 
-  show() {
+  update() {
     // restore the original state
     this.replaceData(this.imgOrigin, this.copyData);
 
@@ -210,7 +207,7 @@ export class Glitch {
       if (arr[i].pixels) {
         this.replaceData(this.imgOrigin, arr[i].pixels);
       }
-    })
+    });
 
     // shift line
     this.shiftLineImgs.forEach((v, i, arr) => {
@@ -222,7 +219,7 @@ export class Glitch {
           this.replaceData(this.imgOrigin, arr[i]);
         }
       }
-    })
+    });
 
     // shift rgb
     this.shiftRGBs.forEach((v, i, arr) => {
@@ -230,7 +227,7 @@ export class Glitch {
         arr[i] = this.shiftRGB(this.imgOrigin);
         this.replaceData(this.imgOrigin, arr[i]);
       }
-    })
+    });
 
     push();
     translate((width - this.imgOrigin.width) / 2, (height - this.imgOrigin.height) / 2);
@@ -250,7 +247,7 @@ export class Glitch {
         image(obj.img, obj.x, obj.y);
       }
       pop();
-    })
+    });
   }
 
   coverImage(img) {

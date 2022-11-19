@@ -3,7 +3,7 @@ import { getRandomInteger } from "../utils/getRandomInteger.js";
 import { isCapitalized } from "../utils/isCapitalized.js";
 import { capitalizeWord } from "../utils/capitalizeWord.js";
 
-export const initWordReplace = () => {
+export const initWordReplace = (callback) => {
   const poem = document.querySelector('.js-poem');
 
   poem.addEventListener('click', (evt) => {
@@ -40,5 +40,9 @@ export const initWordReplace = () => {
       newWord = capitalizeWord(newWord);
     }
     wordWrapper.innerText = newWord;
+
+    if (!!callback) {
+      callback();
+    }
   });
 };
