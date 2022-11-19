@@ -1,13 +1,12 @@
 html {
   @media (max-width: 767px) {
-    height: fill-available;
     height: -webkit-fill-available;
+    height: fill-available;
   }
 }
 
 body {
   margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,12 +22,13 @@ body {
   background: $black;
 
   @media (min-width: 1024px) {
+    height: 100vh;
     min-height: 768px;
   }
   @media (max-width: 1023px) {
     min-height: 100vh;
-    min-height: fill-available;
     min-height: -webkit-fill-available;
+    min-height: fill-available;
   }
 }
 
