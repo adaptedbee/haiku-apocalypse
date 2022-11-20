@@ -1,6 +1,7 @@
 .poem {
   padding-top: calc(172px + 25px);
   margin-bottom: 29px;
+  position: relative;
 
   @media (max-width: 767px) {
     padding-top: calc(93px + 85px + 14px);

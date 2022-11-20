@@ -26,7 +26,13 @@
     </header>
 
     <main>
-      <div class="poem js-poem"></div>
+      <div class="poem">
+        <div class="poem__wrapper js-poem"></div>
+        <div class="tooltip active js-tooltip">
+          <p class="tooltip__text">click on a word to mark it. when you finish the transformation, click share</p>
+          <button class="tooltip__button js-tooltip-button">OK</button>
+        </div>
+      </div>
       <div class="share">
         <p class="share__text">share:</p>
         <a class="share__link" href="#">inst</a>
