@@ -1,4 +1,4 @@
 export const IMAGES = [
-  '/img/01.jpg',
-  '/img/02.jpg'
+  '/img/poems/0102.jpg',
+  '/img/poems/0202.jpg'
 ];
