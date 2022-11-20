@@ -40,6 +40,7 @@ export const initWordReplace = (callback) => {
       newWord = capitalizeWord(newWord);
     }
     wordWrapper.innerText = newWord;
+    wordWrapper.classList.add('bounce');
 
     if (!!callback) {
       callback();
