@@ -3,6 +3,7 @@ import { fillInitialImage } from "./logic/fillInitialImage.js";
 import { initWordReplace} from "./logic/initWordReplace.js";
 import { initAboutPopup } from "./logic/initAboutPopup.js";
 import { isFirefox } from "./utils/isFirefox.js";
+import { checkTooltip } from "./logic/checkTooltip.js";
 
 fillInitialPoem();
 fillInitialImage();
@@ -12,6 +13,7 @@ initWordReplace(() => {
   }
 });
 initAboutPopup();
+checkTooltip();
 
 // Фикс для высоты в мобильном Firefox
 // (в эмуляторе не работает)
