@@ -4,6 +4,7 @@ import { initWordReplace} from "./logic/initWordReplace.js";
 import { initAboutPopup } from "./logic/initAboutPopup.js";
 import { isFirefox } from "./utils/isFirefox.js";
 import { checkTooltip } from "./logic/checkTooltip.js";
+import { setRandomBodyColor } from "./logic/setRandomBodyColor.js";
 
 fillInitialPoem();
 fillInitialImage();
@@ -11,6 +12,7 @@ initWordReplace(() => {
   if (!!window.glitch) {
     window.glitch.update();
   }
+  setRandomBodyColor();
 });
 initAboutPopup();
 checkTooltip();
