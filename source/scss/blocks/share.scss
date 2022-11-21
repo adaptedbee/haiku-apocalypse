@@ -22,7 +22,7 @@
   }
 }
 
-.share__link {
+.share__button {
   &:not(:last-child) {
     margin-right: 21px;
   }
@@ -30,7 +30,11 @@
   font-size: 30px;
   line-height: 35px;
   text-transform: uppercase;
-  text-decoration: none;
+  color: inherit;
+
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 
   @media (max-width: 767px) {
     &:not(:last-child) {

@@ -5,6 +5,7 @@ import { initAboutPopup } from "./logic/initAboutPopup.js";
 import { isFirefox } from "./utils/isFirefox.js";
 import { checkTooltip } from "./logic/checkTooltip.js";
 import { setRandomBodyColor } from "./logic/setRandomBodyColor.js";
+import { initShare } from "./logic/initShare.js";
 
 fillInitialPoem();
 fillInitialImage();
@@ -16,6 +17,7 @@ initWordReplace(() => {
 });
 initAboutPopup();
 checkTooltip();
+initShare();
 
 // Фикс для высоты в мобильном Firefox
 // (в эмуляторе не работает)

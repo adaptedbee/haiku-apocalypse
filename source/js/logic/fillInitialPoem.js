@@ -13,7 +13,7 @@ export const fillInitialPoem = () => {
   const poem = document.querySelector('.js-poem');
 
   todayPoem.forEach(line => {
-    htmlString += '<p class="poem__line">';
+    htmlString += '<p class="poem__line js-line">';
     const words = line.split(' ');
     words.forEach((word, index) => {
       if (index > 0) {
