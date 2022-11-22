@@ -7,6 +7,7 @@ import { checkTooltip } from "./logic/checkTooltip.js";
 import { setRandomBodyColor } from "./logic/setRandomBodyColor.js";
 import { initShare } from "./logic/initShare.js";
 import { initAudio } from "./logic/initAudio.js";
+import { getRandomInteger } from "./utils/getRandomInteger.js";
 
 fillInitialPoem();
 fillInitialImage();
@@ -15,6 +16,11 @@ initWordReplace(() => {
     window.glitch.update();
   }
   setRandomBodyColor();
+
+  // переход к случайной части аудиотрека
+  const TRACK_MINUTES = 59;
+  const audioTimestamp = getRandomInteger(0, TRACK_MINUTES*60*1000);
+  window.soundcloudWidget.seekTo(audioTimestamp);
 });
 initAboutPopup();
 checkTooltip();

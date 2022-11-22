@@ -1,10 +1,10 @@
 export const initAudio = () => {
   const soundcloudIframe = document.querySelector('.js-soundcloud-iframe');
-  const soundcloudWidget = SC.Widget(soundcloudIframe);
-  const button = document.querySelector('.js-audio-toggle-button');
+  window.soundcloudWidget = SC.Widget(soundcloudIframe);
+  const toggleButton = document.querySelector('.js-audio-toggle-button');
 
-  button.addEventListener('click', () => {
-    soundcloudWidget.toggle();
-    button.classList.toggle('pause');
+  toggleButton.addEventListener('click', () => {
+    window.soundcloudWidget.toggle();
+    toggleButton.classList.toggle('pause');
   });
 };
