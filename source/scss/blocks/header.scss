@@ -38,7 +38,9 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  &--pause {
+  cursor: pointer;
+
+  &.pause {
     background-image: url('../img/icons/pause2.svg');
     background-size: 24px 38px;
   }
