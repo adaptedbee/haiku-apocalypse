@@ -1,7 +1,10 @@
 .poem {
-  margin-bottom: 70px;
+  padding-top: calc(172px + 25px);
+  margin-bottom: 29px;
+  position: relative;
 
   @media (max-width: 767px) {
+    padding-top: calc(93px + 85px + 14px);
     margin-bottom: 33px;
   }
 }
@@ -10,19 +13,21 @@
   margin-top: 0;
   margin-bottom: 0;
 
-  font-size: 80px;
-  line-height: 93px;
+  font-family: "HeliosExtBlackC", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 70px;
   text-align: center;
-  text-transform: lowercase;
-  color: $red;
+  color: $white;
 
   span {
-    text-decoration-line: underline;
-    cursor: pointer;
-    transition: opacity 0.3s ease-out;
-
-    &:hover {
-      opacity: 0.4;
+    @media (min-width: 1024px) {
+      cursor: pointer;
+      transition: opacity 0.3s ease-out;
+  
+      &:hover {
+        opacity: 0.4;
+      }
     }
   }
 

@@ -1,40 +1,35 @@
-const initAboutPopup = () => {
-  const openLink = document.querySelector('.js-open-about-popup');
-  const popup = document.querySelector('.js-about-popup');
-  const closeButton = document.querySelector('.js-close-about-popup');
+import { fillInitialPoem } from "./logic/fillInitialPoem.js";
+import { fillInitialImage } from "./logic/fillInitialImage.js";
+import { initWordReplace} from "./logic/initWordReplace.js";
+import { initAboutPopup } from "./logic/initAboutPopup.js";
+import { isFirefox } from "./utils/isFirefox.js";
+import { checkTooltip } from "./logic/checkTooltip.js";
+import { setRandomBodyColor } from "./logic/setRandomBodyColor.js";
+import { initShare } from "./logic/initShare.js";
+import { initAudio } from "./logic/initAudio.js";
+import { getRandomInteger } from "./utils/getRandomInteger.js";
 
-  openLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    popup.classList.add('active');
-  });
-  closeButton.addEventListener('click', () => {
-    popup.classList.remove('active');
-  });
-};
+fillInitialPoem();
+fillInitialImage();
+initWordReplace(() => {
+  if (!!window.glitch) {
+    window.glitch.update();
+  }
+  setRandomBodyColor();
 
+  // переход к случайной части аудиотрека
+  const TRACK_MINUTES = 59;
+  const audioTimestamp = getRandomInteger(0, TRACK_MINUTES*60*1000);
+  window.soundcloudWidget.seekTo(audioTimestamp);
+});
 initAboutPopup();
+checkTooltip();
+initShare();
+initAudio();
 
-const fillInitialText = () => {
-  const TEST_TEXT = [
-    ['На мёртвой', 'ветке'],
-    ['чернеет', 'ворон'],
-    ['осенний', 'вечер']
-  ];
-  let htmlString = '';
-  const poem = document.querySelector('.js-poem');
-
-  TEST_TEXT.forEach(line => {
-    htmlString += '<p class="poem__line">';
-    line.forEach((word, index) => {
-      if (index > 0) {
-        htmlString += ' ';
-      }
-      htmlString += `<span>${word}</span>`;
-    });
-    htmlString += '</p>';
-  });
-
-  poem.innerHTML = htmlString;
-};
-
-fillInitialText();
+// Фикс для высоты в мобильном Firefox
+// (в эмуляторе не работает)
+if (window.innerWidth < 1024 && isFirefox()) {
+  const el = document.querySelector('body');
+  el.style.minHeight = window.innerHeight + 'px';
+}

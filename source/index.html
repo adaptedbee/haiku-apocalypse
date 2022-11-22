@@ -3,42 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hokkuist</title>
-    <!-- <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="img/favicons/favicon16.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="img/favicons/apple-favicon.png">
-    <link rel="manifest" href="manifest.webmanifest"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hokkuist — принимать нельзя менять</title>
+
+    <meta name="title" content="Hokkuist — принимать нельзя менять"/>
+    <meta name="description" content="Новый день —  новая хокку. Можно изменить любое слово и стать соавтором. Но всё, как в жизни, каким будет результат — никто не знает."/>
+    <!-- <meta name="keywords" content="..." /> -->
+
+    <!-- <link rel="image_src" href="http://.../vk.jpg" /> -->
+
+    <meta name="twitter:title" content="Hokkuist — принимать нельзя менять" />
+    <!-- <meta name="twitter:image" content="http://.../tw.jpg" /> -->
+    <!-- <meta name="twitter:card" content="summary_large_image" /> -->
+    <meta name="twitter:description" content="Новый день —  новая хокку. Можно изменить любое слово и стать соавтором. Но всё, как в жизни, каким будет результат — никто не знает." />
+    <!-- <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" /> -->
+
+    <meta property="og:title" content="Hokkuist — принимать нельзя менять" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:image" content="http://.../fb.jpg" /> -->
+    <meta property="og:url" content="http://haiku-apocalypse.surge.sh/" />
+    <meta property="og:description" content="Новый день —  новая хокку. Можно изменить любое слово и стать соавтором. Но всё, как в жизни, каким будет результат — никто не знает." />
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="preload" href="fonts/Roboto-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <header class="header">
       <a class="header__logo">
-        <img src="./img/logo.svg" width="168" height="30" alt="Hokkuist" />
+        <img src="./img/logo2.svg" width="105" height="95" alt="Hokkuist" />
       </a>
 
-      <button class="header__toggle-button">
+      <button class="header__toggle-button js-audio-toggle-button">
         <span class="visually-hidden">Воспроизведение/пауза</span>
       </button>
     </header>
 
     <main>
-      <div class="poem js-poem">
-        <!-- <p class="poem__line">
-          <span>На мёртвой</span> <span>ветке</span>
-        </p>
-        <p class="poem__line">
-          <span>чернеет</span> <span>ворон</span>
-        </p>
-        <p class="poem__line">
-          <span>осенний</span> <span>вечер</span>
-        </p> -->
+      <div class="poem">
+        <div class="poem__wrapper js-poem"></div>
+        <div class="tooltip js-tooltip">
+          <p class="tooltip__text">Каждое слово меняется. Если хочется — кликайте на слова, меняйте смысл хокку и делитесь результатом. Это ваше творчество, как и вся жизнь.</p>
+          <button class="tooltip__button js-tooltip-button">OK</button>
+        </div>
       </div>
       <div class="share">
         <p class="share__text">share:</p>
-        <a class="share__link" href="#">inst</a>
-        <a class="share__link" href="#">twitter</a>
-        <a class="share__link" href="#">tg</a>
+        <button class="share__button js-share-twitter">twitter</button>
+        <button class="share__button js-share-telegram">tg</button>
       </div>
     </main>
 
@@ -52,11 +70,9 @@
           <img src="./img/icons/telegram.svg" width="24" height="24" alt="Telegram" />
         </a>
       </div>
-
-      <a class="footer__link" href="mailto:hokkuist@gmail.com">
-        hokkuist@gmail.com
-      </a>
     </footer>
+
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1214665195&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false" class="visually-hidden js-soundcloud-iframe"></iframe>
 
     <div class="about-popup js-about-popup">
       <button class="about-popup__close js-close-about-popup">
@@ -65,14 +81,17 @@
 
       <div class="about-popup__content">
         <p class="about-popup__text">
-          Excuse me, of course, but the office is independent and the price list is available. In the warmth - all the same knives: we walk around and around and retreat to the latrines. On the contrary, in cold weather we
+          Новый день — новая хокку. Её можно принять, на неё можно помедитировать и найти глубинный смысл, а можно — нажать на любое слово и всё изменить. Одно слово влияет на всё. Что выберете?
         </p>
         <p class="about-popup__line">
-          <span>every</span> <span>word</span> <span>changes</span>
+          <span>Каждое</span> <span>слово</span> <span>меняется</span>
         </p>
       </div>
     </div>
 
-    <script src="./js/script.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="./js/script.js" type="module"></script>
   </body>
 </html>

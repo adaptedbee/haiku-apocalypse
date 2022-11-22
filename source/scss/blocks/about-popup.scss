@@ -9,7 +9,7 @@
   width: calc(100% - 64px);
   height: calc(100% - 60px);
 
-  background-color: $blue;
+  background-color: $lightBlue;
 
   &.active {
     display: flex;
@@ -57,26 +57,25 @@
 
   @media (max-width: 1023px) {
     width: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
 .about-popup__text {
   margin-top: 0;
-  margin-bottom: 90px;
+  margin-bottom: 42px;
 
   font-size: 42px;
   line-height: 49px;
   text-align: center;
-  text-transform: lowercase;
   color: $black;
 
   @media (max-width: 767px) {
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 23px;
   }
 }
 
@@ -92,27 +91,13 @@
 
   span {
     text-decoration-line: underline;
-    cursor: pointer;
-    transition: opacity 0.3s ease-out;
 
-    &:hover {
-      opacity: 0.4;
-    }
-
-    &:last-child {
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        width: 88px;
-        height: 88px;
-        border-radius: 50%;
-        background: rgba($white, 0.16);
+    @media (min-width: 1024px) {
+      cursor: pointer;
+      transition: opacity 0.3s ease-out;
+  
+      &:hover {
+        opacity: 0.4;
       }
     }
   }
@@ -120,14 +105,5 @@
   @media (max-width: 767px) {
     font-size: 24px;
     line-height: 28px;
-
-    span {
-      &:last-child {
-        &::after {
-          width: 50px;
-          height: 50px;
-        }
-      }
-    }
   }
 }

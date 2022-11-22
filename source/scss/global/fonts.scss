@@ -2,7 +2,16 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Roboto-Regular.woff2"),
-    url("../fonts/Roboto-Regular.woff");
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HeliosExtBlackC";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/HeliosExtBlackC.woff2") format("woff2"),
+      url("../fonts/HeliosExtBlackC.woff") format("woff");
   font-display: swap;
 }
