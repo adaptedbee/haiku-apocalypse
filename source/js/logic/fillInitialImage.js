@@ -21,9 +21,6 @@ export const fillInitialImage = () => {
   }
 
   window.draw = () => {
-    if (!img) {
-      return;
-    }
     clear();
     background(0);
 

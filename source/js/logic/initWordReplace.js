@@ -42,8 +42,13 @@ export const initWordReplace = (callback) => {
     if (isLowercased) {
       newWord = capitalizeWord(newWord);
     }
-    wordWrapper.innerText = newWord;
-    wordWrapper.classList.add('bounce');
+    wordWrapper.classList.remove('bounce');
+    setTimeout(() => {
+      wordWrapper.classList.add('bounce');
+    }, 0);
+    setTimeout(() => {
+      wordWrapper.innerText = newWord;
+    }, 500);
 
     if (!!callback) {
       callback();
