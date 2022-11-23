@@ -8,23 +8,23 @@
 .share__text {
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 21px;
+  margin-right: 20px;
 
   font-size: 30px;
   line-height: 35px;
   text-transform: uppercase;
 
   @media (max-width: 767px) {
-    margin-right: 10px;
+    margin-right: 8px;
 
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }
 
 .share__button {
   &:not(:last-child) {
-    margin-right: 21px;
+    margin-right: 20px;
   }
 
   font-size: 30px;
@@ -38,10 +38,10 @@
 
   @media (max-width: 767px) {
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 8px;
     }
 
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }

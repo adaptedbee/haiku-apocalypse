@@ -5,14 +5,17 @@
   left: 50%;
   transform: translateX(-50%);
 
-  width: 388px;
   padding: 20px;
 
+  display: flex;
+  align-items: flex-end;
+
   background: $violet;
-  box-shadow: 0px 5px 27px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.14);
+  border-radius: 6%;
 
   &.active {
-    display: block;
+    display: flex;
   }
 
   &::after {
@@ -30,20 +33,31 @@
   }
 
   @media (max-width: 767px) {
-    width: 280px;
+    padding: 12px 10px;
   }
 }
 
 .tooltip__text {
   margin-top: 0;
   margin-bottom: 10px;
+  width: 300px;
+  margin-right: 20px;
 
   font-size: 30px;
   line-height: 35px;
   text-transform: uppercase;
+
+  @media (max-width: 767px) {
+    width: 140px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .tooltip__button {
+  padding: 0;
+
   font-size: 30px;
   line-height: 35px;
   text-transform: uppercase;
@@ -54,5 +68,9 @@
 
   @media (min-width: 1024px) {
     cursor: pointer;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 16px;
   }
 }
