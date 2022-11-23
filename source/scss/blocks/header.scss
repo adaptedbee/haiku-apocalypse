@@ -34,14 +34,15 @@
   background-color: $red;
   background-image: url('../img/icons/play2.svg');
   background-size: 29px 34px;
-  background-position: center;
+  background-position: calc(50% + 2px) 50%;
   background-repeat: no-repeat;
 
   cursor: pointer;
 
   &.pause {
     background-image: url('../img/icons/pause2.svg');
-    background-size: 24px 38px;
+    background-size: 28px 37px;
+    background-position: center;
   }
 
   @media (max-width: 767px) {
@@ -49,7 +50,7 @@
     height: 40px;
 
     background-size: 20px auto;
-    &--pause {
+    &.pause {
       background-size: 16px auto;
     }
   }
