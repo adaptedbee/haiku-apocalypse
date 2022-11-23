@@ -25,11 +25,14 @@ export const initWordReplace = (callback) => {
       isLowercased = true;
     }
 
-    const substitutions = SUBSTITUTIONS.find(array => array.includes(searchWord));
+    // ищем по двум версиям слова - с заглавной и с маленькой буквы
+    const substitutions = SUBSTITUTIONS.find(array => array.includes(searchWord) || array.includes(clickedWord));
     if (!substitutions) {
       return;
     }
-    const wordIndex = substitutions.indexOf(searchWord);
+    const searchWordIndex = substitutions.indexOf(searchWord);
+    const clickedWordIndex = substitutions.indexOf(clickedWord);
+    const wordIndex = searchWordIndex !== -1 ? searchWordIndex : clickedWordIndex;
     let cleanSubstitutions = [...substitutions];
     cleanSubstitutions.splice(wordIndex, 1);
     const randomIndex = getRandomInteger(0, cleanSubstitutions.length - 1);
