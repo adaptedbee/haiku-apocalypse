@@ -10,7 +10,7 @@
 
   background: $violet;
   box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.14);
-  border-radius: 6%;
+  border-radius: 6px;
 
   &.active {
     display: flex;
@@ -32,6 +32,8 @@
 
   @media (max-width: 767px) {
     padding: 12px 10px;
+
+    border-radius: 3px;
   }
 }
 
